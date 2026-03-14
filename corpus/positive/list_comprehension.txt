@@ -1,0 +1,50 @@
+==========================
+Simple comprehension
+==========================
+[x for x in xs]
+---
+(source_file
+    (list_comprehension
+    (identifier)
+    (comprehension_clauses
+        (for_clause
+        (identifier)
+        (identifier)))))
+==========================
+Comprehension with expression
+==========================
+[x+1 for x in xs]
+---
+(source_file
+    (list_comprehension
+    (binary_expression
+        (identifier)
+        (num))
+    (comprehension_clauses
+        (for_clause
+        (identifier)
+        (identifier)))))
+
+==========================
+Comprehension with nested list
+==========================
+[[i for i in row] for row in matrix]
+---
+(source_file
+    (list_comprehension
+    (list_comprehension
+        (identifier)
+        (comprehension_clauses
+        (for_clause
+            (identifier)
+            (identifier))))
+    (comprehension_clauses
+        (for_clause
+        (identifier)
+        (identifier)))))
+
+
+
+
+
+

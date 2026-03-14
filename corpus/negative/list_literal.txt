@@ -1,0 +1,71 @@
+==========================
+Missing closing bracket
+==========================
+[1, 2, 3
+---
+(source_file
+  (list_literal
+    (num)
+    (num)
+    (num)
+    (MISSING "]")))
+==========================
+Missing open bracket
+==========================
+]
+---
+(source_file
+  (ERROR))
+==========================
+Extra comma
+==========================
+[1, 2, 3,]
+---
+(source_file
+  (list_literal
+    (num)
+    (num)
+    (num)))
+==========================
+Empty brackets with comma
+==========================
+[,]
+---
+(source_file
+  (list_literal
+    (ERROR)))
+==========================
+Invalid element
+==========================
+[1, *x]
+---
+(source_file
+  (list_literal
+    (num)
+    (ERROR)
+    (identifier)))
+==========================
+Mismatched brackets
+==========================
+[1, 2]]
+---
+(source_file
+  (list_literal
+    (num)
+    (num))
+  (ERROR))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

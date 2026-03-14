@@ -1,0 +1,41 @@
+====================
+Single line comments
+====================
+
+/Not a comment
+
+--- 
+(source_file
+   (ERROR
+         (UNEXPECTED 'N'))
+      (identifier)
+      (identifier)
+      (identifier))
+   (ERROR))
+
+====================
+Block comments Open
+====================
+
+/Wren Language*/
+
+---
+(source_file
+   (ERROR
+      (identifier))
+   (identifier)
+   (ERROR))
+
+====================
+Block comments Close
+====================
+
+/* Wren language
+/
+
+---
+(source_file
+   (ERROR
+      (identifier))
+   (identifier)
+   (ERROR))

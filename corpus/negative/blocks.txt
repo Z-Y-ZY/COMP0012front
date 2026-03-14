@@ -1,0 +1,15 @@
+==============
+Numbers (nums)
+==============
+
+0 }
+}
+{ 0
+---
+
+(source_file
+    (num)
+    (ERROR)
+    (block
+      (num)
+      (MISSING "}")))

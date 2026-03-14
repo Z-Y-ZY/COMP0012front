@@ -1,0 +1,67 @@
+==========================
+empty index
+==========================
+a[]
+---
+(source_file
+      (identifier)
+      (ERROR))
+
+==========================
+missing closing bracket
+==========================
+a[0
+---
+(source_file
+  (index_expression
+    array: (identifier)
+    index: (num)
+    (MISSING "]")))
+
+==========================
+missing opening bracket
+==========================
+a0]
+---
+(source_file
+  (identifier)
+  (ERROR
+    (num)))
+==========================
+multiple indices not allowed
+==========================
+a[1,2]
+---
+(source_file
+  (index_expression
+    array: (identifier)
+    index: (num)
+    (ERROR
+      (num))))
+
+==========================
+non-expression index
+==========================
+a[for x in xs]
+---
+(source_file
+  (index_expression
+    (identifier)
+    (identifier)
+    (ERROR
+        (identifier)
+        (identifier))))
+
+==========================
+index on invalid target
+==========================
+[1,2,3]0
+---
+(source_file
+  (list_literal
+      (num)
+      (num)
+      (num))
+    (ERROR
+      (num)))
+  

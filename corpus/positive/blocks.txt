@@ -1,0 +1,23 @@
+==============
+Numbers (nums)
+==============
+
+{0}
+{ 0 }
+{ 
+    0 }
+
+{ 0 
+}
+{ 
+    0 
+}
+---
+
+(source_file 
+  (block (num))
+  (block (num))
+  (block (num))
+  (block (num))
+  (block (num))
+  )

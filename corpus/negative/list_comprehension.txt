@@ -1,0 +1,54 @@
+==========================
+Missing 'for' keyword
+==========================
+[x x in xs]
+---
+(source_file
+    (list_literal
+    (identifier)
+    (ERROR
+        (identifier)
+        (identifier))))
+==========================
+Missing 'in' keyword
+==========================
+[x for x xs]
+---
+(source_file
+    (list_literal
+    (identifier)
+    (ERROR
+        (identifier)
+        (identifier))))
+==========================
+Mismatched parentheses in tuple unpacking
+==========================
+[x+y for (x, y in pairs]
+---
+(source_file
+    (list_comprehension
+    (binary_expression
+        (identifier)
+        (identifier))
+    (comprehension_clauses
+        (for_clause
+        (ERROR
+            (identifier))
+        (identifier)
+        (identifier)))))
+==========================
+Invalid target variable
+==========================
+[x+1 for 3 in xs]
+---
+(source_file
+    (list_literal
+    (binary_expression
+        (identifier)
+        (num))
+    (ERROR
+        (ERROR
+        (num))
+        (identifier))))
+
+

@@ -1,0 +1,94 @@
+==========================
+simple numeric index
+==========================
+a[0]
+---
+(source_file
+  (index_expression
+    (identifier)
+    (num)))
+
+==========================
+identifier index
+==========================
+arr[i]
+---
+(source_file
+  (index_expression
+    (identifier)
+    (identifier)))
+
+==========================
+index as statement
+==========================
+data[1]
+---
+(source_file
+  (index_expression
+    (identifier)
+    (num)))
+
+==========================
+index with list literal
+==========================
+[1,2,3][0]
+---
+(source_file
+  (index_expression
+    (list_literal
+      (num)
+      (num)
+      (num))
+    (num)))
+
+==========================
+index with list comprehension
+==========================
+[x for x in xs][0]
+---
+(source_file
+  (index_expression
+        (list_comprehension
+          (identifier)
+          (comprehension_clauses
+            (for_clause
+              (identifier)
+              (identifier))))
+    (num)))
+
+==========================
+nested indexing
+==========================
+matrix[i][j]
+---
+(source_file
+  (index_expression
+    (identifier)
+    (identifier)
+    (identifier)))
+
+==========================
+index inside method call
+==========================
+foo.bar(arr[2])
+---
+(source_file
+  (method_call
+    (identifier)
+    (identifier)
+    (argument_list
+      (index_expression
+        (identifier)
+        (num)))))
+
+==========================
+index used in assignment
+==========================
+var x = arr[0]
+---
+(source_file
+  (assignment
+    name: (identifier)
+    value: (index_expression
+        array: (identifier)
+        index: (num))))

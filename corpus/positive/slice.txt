@@ -1,0 +1,63 @@
+==========================
+Simple slice
+==========================
+arr[1:5]
+---
+(source_file
+  (slice
+    (identifier)
+    (num)
+    (num)))
+==========================
+Slice with step
+==========================
+arr[1:10:2]
+---
+(source_file
+  (slice
+    (identifier)
+    (num)
+    (num)
+    (num)))
+==========================
+Slice without start
+==========================
+arr[:5]
+---
+(source_file
+  (slice
+    (identifier)
+    (num)))
+==========================
+Slice without end
+==========================
+arr[3:]
+---
+(source_file
+  (slice
+    (identifier)
+    (num)))
+==========================
+Simple slice in assignment
+==========================
+var x = arr[1:5]
+---
+(source_file
+    (assignment
+    (identifier)
+    (slice
+        (identifier)
+        (num)
+        (num))))
+==========================
+Nested slices
+==========================
+matrix[1:3][2:4]
+---
+(source_file
+    (slice
+    (identifier)
+    (num)
+    (num)
+    (num)
+    (num)))

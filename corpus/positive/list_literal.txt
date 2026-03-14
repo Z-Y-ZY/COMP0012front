@@ -1,0 +1,65 @@
+==========================
+Empty list
+==========================
+[]
+---
+(source_file
+  (list_literal))
+==========================
+Single element list
+==========================
+[1]
+---
+(source_file
+  (list_literal
+    (num)))
+==========================
+Multiple elements
+==========================
+[1, 2, 3]
+---
+(source_file
+  (list_literal
+    (num)
+    (num)
+    (num)))
+==========================
+List of identifiers
+==========================
+[x, y, z]
+---
+(source_file
+  (list_literal
+    (identifier)
+    (identifier)
+    (identifier)))
+==========================
+Nested list
+==========================
+[[1, 2], [3, 4]]
+---
+(source_file
+  (list_literal
+    (list_literal
+      (num)
+      (num))
+    (list_literal
+      (num)
+      (num))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

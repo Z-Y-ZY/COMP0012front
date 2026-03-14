@@ -1,0 +1,61 @@
+
+==========================
+double colon without step
+==========================
+a[::]
+---
+(source_file
+  (slice
+      (identifier)
+      (ERROR)))
+==========================
+too many slice components
+==========================
+a[1:2:3:4]
+---
+(source_file
+  (slice
+    (identifier)
+    (num)
+    (num)
+    (ERROR
+      (num))
+    (num)))
+==========================
+Missing colon
+==========================
+arr[5]
+---
+(source_file
+  (index_expression
+    (identifier)
+    (num)))
+==========================
+Empty brackets
+==========================
+arr[]
+---
+(source_file
+  (identifier)
+  (ERROR))
+==========================
+Missing closing bracket
+==========================
+arr[1:5
+---
+(source_file
+  (slice
+    (identifier)
+    (num)
+    (num)
+    (MISSING "]")))
+==========================
+Slice used as function call
+==========================
+arr(1:5)
+---
+(source_file
+    (identifier)
+    (ERROR
+      (num)
+      (num)))

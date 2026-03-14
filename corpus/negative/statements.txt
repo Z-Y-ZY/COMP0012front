@@ -1,0 +1,40 @@
+===========
+Open String
+===========
+
+"hello
+
+---
+
+(source_file 
+  (string
+    (MISSING """)))
+
+============
+Close String
+============
+
+hello"
+
+---
+
+(source_file
+  (identifier)
+  (ERROR))
+
+===========
+Assignments
+===========
+
+var = "yellow"
+var str = "yellow
+
+---
+
+(source_file
+  (ERROR)
+  (string)
+  (assignment
+    (identifier)
+    (string
+    (MISSING """))))
